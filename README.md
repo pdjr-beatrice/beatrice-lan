@@ -19,7 +19,12 @@ router WAN port an IP address on the 192.168.2.0/24 subnet.
 
 The router assigns static IP addresses to a number of clients:
 
-| Name        | Interface | MAC               | IP            | Description     |
-| helm        | eth0      |                   | 192.168.1.2   | Signal K server |
-| victron     | eth0      |                   | 192.168.1.3   | Victron Venus GX controller |
-| lte-gateway |        | 
+| Name           | Interface | MAC               | IP            | Description     |
+|:---------------|:----------|:------------------|:--------------|:----------------|
+| helm           | eth0      |                   | 192.168.1.2   | Signal K server |
+| victron        | eth0      |                   | 192.168.1.3   | Victron Venus GX controller |
+| lte-gateway    | eth0      |                   | 192.168.2.1   | LTE router (LAN port) |
+|                | eth1      |                   | DHCP          | LTE router (WAN port) |
+|                | wlan0     |                   | 192.168.4.1   | LTE router hotspot (SSID: beatrice-gw, hidden) |
+| home-assistant | eth0      |                   | 192.168.1.99  | Home Assistant controller |
+|                | wlan0     |                   | 192.168.99.1  | Home Assistant hostspot (SSID: beatrice-ha, hidden)
