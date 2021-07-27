@@ -1,8 +1,13 @@
 # beatrice-lan
 
-Beatrice's on-board ethernet network (192.168.1.0/24) is managed by
-a Google Wifi router which provides a WAN gateway and supports wired
-and wireless mesh networks.
+Beatrice's main ethernet infrastructure is implemented as a mesh network
+based on a Google Wifi router and associated access points.
+The router WAN interface connects to WiFi and 4G gateways and internally
+supports wired and wireless LAN.
+
+The router implements a primary network (192.168.1.0/24) with SSID ```beatrice``` (password '95344958') and a 
+secondary network (10.0.0.0/24) with SSID ```beatrice-guest``` (password 'pleaseletmein').
+The secondary network has limited access to resources on the primary network.
 
 Google WiFi Router
 WAN IP: DHCP
