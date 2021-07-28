@@ -27,7 +27,8 @@ LAN IP: STATIC 192.168.1.254
 Google WiFi Point (Saloon)
 LAN IP: 192.168.1.203
 
-The router assigns static IP addresses to a number of clients:
+A number of network clients implement critical network services and are assigned
+static IP addresses by the router.
 
 | Name           | Device           | Interface | MAC               | IP            | Description     |
 |:---------------|:-----------------|:----------|:------------------|:--------------|:----------------|
@@ -36,10 +37,18 @@ The router assigns static IP addresses to a number of clients:
 | lte-gateway    | Raspberry Pi 3B+ | eth0      |                   | 192.168.2.1   | LTE router (LAN port) |
 |                |                  | eth1      |                   | DHCP          | LTE router (WAN port) |
 |                |                  | wlan0     |                   | 192.168.4.1   | LTE router hotspot (SSID: beatrice-gw, hidden and open) |
-| home-assistant | Raspberry Pi 3B+ | eth0      | B8:27:EB:7E:6F:5E | 192.168.1.99  | Home Assistant controller |
+| homeassistant  | Raspberry Pi 3B+ | eth0      | B8:27:EB:7E:6F:5E | 192.168.1.99  | Home Assistant controller |
 |                |                  | wlan0     |                   | 192.168.99.1  | Home Assistant hostspot (SSID: beatrice-ha, hidden and open) |
 | moode          | Raspberry Pi 3   | eth0      | B8:27:EB:3E:48:44 | 192.168.1.11  | Audio player (wheelhouse) and DNLA server |
 | saloon-tv      | Samsung          | wlan0     | 00:12:FB:26:2D:4A | DHCP          | Saloon TV
 | saloon-tv-kodi | Raspberry Pi 4   | wlan0     | E4:5F:01:0B:A3:25 | 192.168.1.12  | Kodi player |
 | desktop1       |                  | eth0      |                   |               | Helm PC |
 |                |                  | wlan0     |                   |               | |
+
+##helm
+
+##victron
+
+##lte-gateway
+
+##homeassistant
