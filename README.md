@@ -1,26 +1,28 @@
 # beatrice-lan
 
-Beatrice's main ethernet infrastructure is implemented as a mesh network
+Beatrice's ethernet infrastructure is implemented around a mesh network
 based on a Google Wifi router and associated access points.
-The router WAN interface connects to WiFi and 4G gateways and internally
-supports wired and wireless LAN.
-
-The router implements a primary network (192.168.1.0/24) with SSID ```beatrice``` (password '95344958') and a 
-secondary network (10.0.0.0/24) with SSID ```beatrice-guest``` (password 'pleaseletmein').
-The secondary network has limited access to resources on the primary network.
-
-Google WiFi Router
-WAN IP: DHCP
-LAN IP: STATIC 192.168.1.254
-
-Google WiFi Point
-LAN IP: 192.168.1.203
 
 The router WAN interface connects at any one time to either a WiFi bridge
 implemented by a Ubiquiti Bullet or a 4G LTE router implemented by a
-Raspberry Pi.
+Raspberry Pi with sonnected LTE modem (USB dongle).
 Both of these gateway devices are configured to automatically assign the
 router WAN port an IP address on the 192.168.2.0/24 subnet. 
+
+The router implements an LAN (192.168.1.0/24) on both wired and wireless
+mesh interfaces: the wired interface connects to a gigabit ethernet switch
+and the wireless interface presents two networks a primary service with SSID
+```beatrice``` (password '95344958') and a secondary service (10.0.0.0/24)
+with SSID ```beatrice-guest``` (password 'pleaseletmein').
+The secondary network has limited access to resources on the primary network.
+
+Google WiFi Router (Wheelhouse)
+WAN IP: DHCP
+LAN IP: STATIC 192.168.1.254
+
+Google WiFi Point (Saloon)
+LAN IP: 192.168.1.203
+
 
 The router assigns static IP addresses to a number of clients:
 
